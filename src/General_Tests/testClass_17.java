@@ -18,15 +18,17 @@ public class testClass_17 {
 	
 	@Before
 	public void initialize(){
-		
+		System.out.println("**** Test case 17 started ****\n");
 		weatherInputs.setRainDesnsity(8.4f);
 		weatherInputs.setWindDirection(120);
 		weatherInputs.setWindSpeed(24);
 	}
 	
 	@Test
-	public void extremeWeatherLeadingVehiclePresent(){
+	public void testFunction(){
 			
 		Assert.assertEquals("extreme", weatherController.detectWeather(weatherInputs));
+		System.out.println("Weather Status : "+weatherController.detectWeather(weatherInputs));
+		System.out.println("\n**** Test case 17 ended ****\n\n");
 	}
 }

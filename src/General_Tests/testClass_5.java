@@ -13,14 +13,13 @@ import servicePackage.StateController;
 import servicePackage.WeatherController;
 
 public class testClass_5 {
-	
 	StateController stateController = new StateController();
 	VehicleData vehicleData = new VehicleData();
 	UserInputs userInputs = new UserInputs();
 	
 	@Before
 	public void initialize(){
-		
+		System.out.println("**** Test case 5 started ****\n");
 		userInputs.setAcc_Status(true);
 		userInputs.setSetSpeed(80);
 		userInputs.setSetDistance(30);
@@ -28,8 +27,10 @@ public class testClass_5 {
 	}
 	
 	@Test
-	public void extremeWeatherLeadingVehiclePresent(){
+	public void testFunction(){
 			
 		Assert.assertEquals("ON", stateController.detectState(userInputs, vehicleData));
+		System.out.println("ACC STATUS : "+stateController.detectState(userInputs, vehicleData));
+		System.out.println("\n**** Test case 5 ended ****\n\n");
 	}
 }

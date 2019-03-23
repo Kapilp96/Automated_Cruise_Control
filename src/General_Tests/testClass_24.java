@@ -22,6 +22,7 @@ public class testClass_24 {
 	
 	@Before
 	public void initialize(){
+		System.out.println("**** Test case 24 started ****\n");
 		weatherInputs.setRainDesnsity(9.8f);
 		weatherInputs.setWindSpeed(18);
 		weatherInputs.setWindDirection(350);
@@ -35,7 +36,7 @@ public class testClass_24 {
 	}
 	
 	@Test
-	public void extremeWeatherLeadingVehiclePresent(){
+	public void testFunction(){
 		SpeedController speedController = new SpeedController();
 		vehicleData.setCurrentState(stateController.detectState(userInputs, vehicleData));
 		weatherInputs.setWeatherStatus(weatherController.detectWeather(weatherInputs));
@@ -43,5 +44,7 @@ public class testClass_24 {
 		
 		Assert.assertEquals("ACC NOT IN ON STATE", speedController.controlSpeed(weatherInputs, userInputs,
 											leadingVehicle, vehicleData));
+		System.out.println("ACC NOT IN ON STATE as user has not turned on ACC");
+		System.out.println("\n**** Test case 24 ended ****\n\n");
 	}
 }

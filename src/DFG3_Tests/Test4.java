@@ -18,7 +18,7 @@ public class Test4 {
 	
 	@Before
 	public void initialize(){
-		
+		System.out.println("**** Test case 4 started ****\n\n");
 		userInputs.setAcc_Status(true);
 		userInputs.setSetSpeed(70);
 		userInputs.setSetDistance(40);
@@ -29,9 +29,10 @@ public class Test4 {
 	}
 	
 	@Test
-	public void extremeWeatherLeadingVehiclePresent(){
+	public void testFunction(){
 		SpeedController speedController = new SpeedController();
 		Assert.assertEquals("Accelrating", speedController.takeDecision(weatherInputs, userInputs,
 											leadingVehicle, vehicleData));
+		System.out.println("**** Test case 4 ended ****\n\n");
 	}
 }

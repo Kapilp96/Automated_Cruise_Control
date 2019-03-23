@@ -1,4 +1,4 @@
-package General_Tests;
+	package General_Tests;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -22,6 +22,7 @@ public class testClass_11 {
 	
 	@Before
 	public void initialize(){
+		System.out.println("**** Test case 11 started ****\n");
 		weatherInputs.setRainDesnsity(2.4f);
 		weatherInputs.setWindSpeed(22);
 		weatherInputs.setWindDirection(135);
@@ -35,7 +36,7 @@ public class testClass_11 {
 	}
 	
 	@Test
-	public void extremeWeatherLeadingVehiclePresent(){
+	public void testFunction(){
 		SpeedController speedController = new SpeedController();
 		vehicleData.setCurrentState(stateController.detectState(userInputs, vehicleData));
 		weatherInputs.setWeatherStatus(weatherController.detectWeather(weatherInputs));
@@ -43,5 +44,6 @@ public class testClass_11 {
 		
 		Assert.assertEquals("Deaccelrating", speedController.controlSpeed(weatherInputs, userInputs,
 											leadingVehicle, vehicleData));
+		System.out.println("\n**** Test case 11 ended ****\n\n");
 	}
 }

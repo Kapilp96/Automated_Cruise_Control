@@ -22,6 +22,7 @@ public class testClass_19 {
 	
 	@Before
 	public void initialize(){
+		System.out.println("**** Test case 19 started ****\n");
 		weatherInputs.setRainDesnsity(8f);
 		weatherInputs.setWindSpeed(15);
 		weatherInputs.setWindDirection(98);
@@ -35,7 +36,7 @@ public class testClass_19 {
 	}
 	
 	@Test
-	public void extremeWeatherLeadingVehiclePresent(){
+	public void testFunction(){
 		SpeedController speedController = new SpeedController();
 		vehicleData.setCurrentState(stateController.detectState(userInputs, vehicleData));
 		weatherInputs.setWeatherStatus(weatherController.detectWeather(weatherInputs));
@@ -43,5 +44,6 @@ public class testClass_19 {
 		
 		Assert.assertEquals("Accelrating", speedController.controlSpeed(weatherInputs, userInputs,
 											leadingVehicle, vehicleData));
+		System.out.println("\n**** Test case 19 ended ****\n\n");
 	}
 }

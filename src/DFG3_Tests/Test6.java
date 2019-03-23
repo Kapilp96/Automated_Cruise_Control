@@ -1,4 +1,4 @@
-package DFG3_Tests;
+ package DFG3_Tests;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -18,7 +18,7 @@ public class Test6 {
 	
 	@Before
 	public void initialize(){
-		
+		System.out.println("**** Test case 6 started ****\n\n");
 		userInputs.setAcc_Status(true);
 		userInputs.setSetSpeed(60);
 		userInputs.setSetDistance(50);
@@ -29,9 +29,10 @@ public class Test6 {
 	}
 	
 	@Test
-	public void extremeWeatherLeadingVehiclePresent(){
+	public void testFunction(){
 		SpeedController speedController = new SpeedController();
 		Assert.assertEquals("Maintain Speed", speedController.takeDecision(weatherInputs, userInputs,
 											leadingVehicle, vehicleData));
+		System.out.println("**** Test case 6 ended ****\n\n");
 	}
 }

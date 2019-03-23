@@ -19,7 +19,7 @@ public class Test1 {
 		
 		@Before
 		public void initialize(){
-			
+			System.out.println("**** Test case 1 started ****\n\n");
 			userInputs.setAcc_Status(true);
 			userInputs.setSetSpeed(70);
 			userInputs.setSetDistance(20);
@@ -34,6 +34,7 @@ public class Test1 {
 			SpeedController speedController = new SpeedController();
 			Assert.assertEquals("Accelrating", speedController.takeDecision(weatherInputs, userInputs,
 												leadingVehicle, vehicleData));
+			System.out.println("**** Test case 1 ended ****\n\n");
 		}
 	}
 
